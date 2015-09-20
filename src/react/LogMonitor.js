@@ -58,14 +58,13 @@ export default class LogMonitor extends Component {
     theme: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.string
-    ])
+    ]),
   };
 
   static defaultProps = {
     select: (state) => state,
     monitorState: { isVisible: true },
-    theme: 'nicinabox',
-    visibleOnLoad: true
+    theme: 'nicinabox'
   };
 
   componentWillReceiveProps(nextProps) {
@@ -95,15 +94,6 @@ export default class LogMonitor extends Component {
       node.scrollTop = scrollHeight - offsetHeight;
       this.scrollDown = false;
     }
-  }
-
-  componentWillMount() {
-    let visibleOnLoad = this.props.visibleOnLoad;
-    const { monitorState } = this.props;
-    this.props.setMonitorState({
-      ...monitorState,
-      isVisible: visibleOnLoad
-    });
   }
 
   handleRollback() {

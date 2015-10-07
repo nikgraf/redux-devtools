@@ -58,7 +58,7 @@ export default class LogMonitor extends Component {
     theme: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.string
-    ]),
+    ])
   };
 
   static defaultProps = {
